@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Panier</title>
+     <link rel="stylesheet" href="EmpecherTelecharger.css"> 
+    <link rel="stylesheet" href="panier.css"> <!-- Assurez-vous d'avoir un fichier CSS pour le style -->
+     <!-- Votre fichier JavaScript -->
+</head>
+<body>
+    <div class="container">
+        <h1>Votre Panier</h1>
+        <div id="panier-container">
+            <!-- Les produits du panier seront affichés ici -->
+        </div>
+        <div class="total">
+            <h2>Total : <span id="total-price">0 FCFA</span></h2>
+        </div>
+        <div class="commande-formulaire">
+            <h2 style="color :green;">Merci de compléter ce formulaire uniquement si vous êtes prêt à payer.</h2>
+            <form id="form-commande">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required placeholder="Nom" >
+
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone" required placeholder="📞 Ex: 97000000" >
+
+                <label for="adresse">Adresse :</label>
+                <input type="text" id="adresse" name="adresse" required placeholder="🇧🇯 Adresse" >
+
+                <label for="heure-livraison">⏰ Heure de Livraison :</label>
+                <input type="time" id="heure-livraison" name="heure-livraison" required >
+
+                <button type="submit" id="finaliser-commande" style="font-size:18px;" >Acheter maintenant </button>
+            </form>
+        </div>
+    </div>
+   <script type="module" src="EmpecherTelecharger.js"></script>
+    <script type="module" src="panier.js"></script>
+    <script type="module" src="pixel.js"></script>
+</body>
+</html>

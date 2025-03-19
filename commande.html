@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande Confirmée</title>
+    <link rel="stylesheet" href="commande.css">
+    <script type="module" src="commande.js"></script>
+</head>
+<body>
+    
+   <main>
+        <h1>Votre commande</h1>
+    <div id="commande-details"></div>
+    <h2>Retrouver mes commandes</h2>
+  <label for="search-phone">Numéro de téléphone </label>
+    
+    <div id="voir-commande">
+<input type="tel" id="search-phone" placeholder="📞 Ex: 97000000">
+<button onclick="rechercherCommandes()">Voir mes commandes</button>
+    </div>
+  
+
+<div id="commandes-container"></div>
+
+<div style="disposition : relative ;bottom:0px;text-align:center;">
+     <a href="produit.html"><button id="voirautreproduit">Voir d'autres produits </button></a>
+</div>
+   </main>
+
+<footer>
+        <p>&copy; 2025 LidoSelect - Tous droits réservés</p>
+    </footer>
+<script type="module" src="pixel.js"></script>
+</body>
+</html>

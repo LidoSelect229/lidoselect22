@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f8f8f8;
+    flex-direction: column;
+    height: 100%;
+   
+   
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#produits-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+    position : relative ;
+    left: 0;
+    right: 0;
+    text-align:center ;
+}
+
+.produit {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    text-align: center;
+    position : relative ;
+    left: 0;
+    right: 0;  
+}
+
+.produit img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.produit h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+
+
+ /* Style du bouton vibrant */
+       button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 15px;
+            position: relative;
+            z-index: 1;
+            animation: vibration 0.2s infinite;
+        }
+
+        /* Animation de vibration */
+        @keyframes vibration {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-2px, 2px); }
+            50% { transform: translate(2px, -2px); }
+            75% { transform: translate(-2px, -2px); }
+            100% { transform: translate(2px, 2px); }
+        } 
+        
+        
+button:hover {
+    background: #e65c00;
+}
+
+
+
+
+.prix {
+    display: flex;
+    justify-content: center; /* Aligner les prix horizontalement */
+    align-items: center;
+    gap: 10px; /* Espace entre les prix */
+    margin-top: 10px; /* Espacement entre l'image et les prix */
+}
+
+
+
+.prix-original {
+    text-decoration: line-through; /* Barrer le prix original */
+    color: red;
+    font-size: 16px;
+}
+
+.prix-actuel {
+    color: green;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+footer {
+   position: relative;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   text-align:center;
+    background-color:black;
+}
+footer p {
+    color: white;
+    text-align:center;
+    padding: 10px 5px;
+}

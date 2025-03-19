@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail produits</title>
+      <link rel="stylesheet" href="EmpecherTelecharger.css">
+    <link rel="stylesheet" href="avis.css">
+      <link rel="stylesheet" href="description.css">
+      <link rel="stylesheet" href="dark-mode.css">
+      <link rel="stylesheet" href="avantFooter.css"> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+      <script type="module" src="description.js" ></script>
+       
+    
+</head>
+<body>
+    <style>
+          <!-- besoin d'aide?-->
+        #support-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    z-index: 1000;
+}
+
+#support-button button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#support-options {
+    display: none;
+    background: white;
+    position: absolute;
+    bottom: 350px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#support-options a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#support-options a:hover {
+    background-color: #f1f1f1;
+}
+   
+    </style>
+    
+     <!-- Bande de notification Paiement et Livraison -->
+<div class="top-bar">
+    <div class="top-text">Paiement à la Livraison et Livraison</div>
+    <div class="bottom-text">Gratuite</div>
+     <a style="bottom:15px;"  id="toggle-dark-mode">💡</a>
+</div>
+    <!-- Barre de navigation -->
+    <div class="navbar">       <span class="menu-icon" onclick="ouvrirMenu()" >☰</span>
+      <a href="index.html"><img src="https://i.imgur.com/yZk5fp6.png" alt="Logo" class="logo"></a>
+       <a href="#"> <span class="cart-icon" onclick="toggleCart()" >🛒</span></a>
+    </div>
+     <!-- Menu Latéral -->
+    <div class="menu" id="menu">
+        <span class="close-btn" onclick="fermerMenu()">&times;</span><hr>
+         <a href="admin.html" id="admin-link" style="display: none;">👑 Espace Admin</a>
+       <hr> <a href="index.html">🏠 Accueil</a><hr>
+        <a href="produit.html">📦 Nos Produits</a><hr>
+        <a href="contact.html">📞Contactez-nous</a>
+        
+       <hr> <a href="connexion.html" class="connexion-link">👤 Connexion</a>
+    </div>
+    
+    
+    
+   <!-- panier -->
+  <div class="cart-dropdown" id="cartDropdown">
+    <h3>Votre panier est vide</h3>
+   <a href="produit.html"> <button style=" font-size:18px ;text-align: center; padding:10px 5px;" >Continuer les achats</button></a>
+    <p>Vous possédez un compte ? <a href="connexion.html">Connectez-vous</a> pour consulter vos commandes existantes.</p>
+  </div>
+   <script>
+      //panier
+      function toggleCart() {
+  const cartDropdown = document.getElementById('cartDropdown');
+  cartDropdown.style.display = cartDropdown.style.display === 'block' ? 'none' : 'block';
+}
+  </script>
+ 
+    <script>
+        function ouvrirMenu() {
+            document.getElementById("menu").style.left = "0"; // Fait apparaître le menu
+        }
+
+        function fermerMenu() {
+            document.getElementById("menu").style.left = "-250px"; // Cache le menu
+        }  
+        
+
+//défilement de top-bar
+
+let lastScrollTop = 0; // Dernière position du défilement
+let isScrollingDown = false; // Vérifie si on défile vers le bas
+const topBar = document.querySelector('.top-bar'); // Sélectionner la barre de navigation
+
+let scrollTimeout; // Variable pour stocker le timeout
+
+// Fonction pour gérer le défilement
+function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Si on défile vers le bas (scrollTop > lastScrollTop)
+    if (scrollTop > lastScrollTop) {
+        // Lorsque on défile vers le bas, on déplace la top-bar vers le haut
+        topBar.style.top = `-${scrollTop}px`;  // La top-bar se cache en défilant vers le bas
+    } else {
+        // Lorsque on défile vers le haut, la top-bar reste à sa place
+        topBar.style.top = '0px';  // Revenir à sa position initiale
+    }
+
+    // Si un défilement est détecté, on efface le timeout précédent
+    clearTimeout(scrollTimeout);
+
+    // Définir un nouveau timeout pour revenir à la position après une pause de défilement
+    scrollTimeout = setTimeout(() => {
+        // Revenir à la position d'origine après une pause de défilement
+        topBar.style.top = '0px';  // Revenir à la position initiale après l'arrêt du défilement
+    }, 200); // 200ms après l'arrêt du défilement
+}
+
+// Ajouter un événement de défilement sur la fenêtre
+window.addEventListener('scroll', handleScroll);
+ </script>
+ 
+ <script>
+    //besoin d'aide ?
+    
+    function ouvrirSupport() {
+        let options = document.getElementById("support-options");
+        options.style.display = (options.style.display === "block") ? "none" : "block";
+    }
+</script>
+
+            <section id="detail-produit">
+                <h1>Détails du Produit</h1>
+            </section>
+    
+
+  <main id="produit-details">
+             <!-- Détails du produit affichés ici -->
+       
+    </main>
+
+<!-- besoin d'aide ?-->
+ <script>
+    //besoin d'aide ?
+    
+    function ouvrirSupport() {
+        let options = document.getElementById("support-options");
+        options.style.display = (options.style.display === "block") ? "none" : "block";
+    }
+</script>
+ 
+  <!-- avant footer -->
+       <div class="avantFooter" style="position :relative ; top:60px;">
+        <div class="card orange">
+            <div class="icon">🚚</div>
+            <h3>Livraison gratuite</h3>
+            <p>Livraison gratuite pour toutes les commandes</p>
+            <p>Disponible partout au Bénin 🇧🇯</p>
+        </div>
+   <div class="card blue">
+            <div class="icon">✅</div>
+            <h3>Garantie satisfait ou remboursé</h3>
+            <p>Garantie de remboursement de 30 jours</p>
+        </div>
+
+        <div class="card green">
+            <div class="icon">💵</div>
+            <h3>Paiement à la livraison</h3>
+            <p>Payez à la réception de votre commande</p>
+        </div>
+    </div>
+  
+ 
+ <!-- le pied de la page-->
+<footer>
+    
+     <!-- besoin d'aide ?-->
+     
+     <div  id="support-button">
+    <button style="margin-top:5px;" onclick="ouvrirSupport()">💬 Besoin d’aide ?</button>
+    <div id="support-options">
+        <a href="https://wa.me/2290197797740" target="_blank">📱 WhatsApp</a>
+        <a href="tel:+2290197797740">
+  <i class="fas fa-phone"></i> Téléphone 
+</a>
+    </div>
+</div>
+
+
+
+        <p>&copy; 2025 LidoSelect - Tous droits réservés</p>
+    </footer>
+    <script src="EmpecherTelecharger.js"></script>
+    <script src="dark-mode.js"></script>
+    <script type="module" src="pixel.js"></script>
+</body>
+</html>

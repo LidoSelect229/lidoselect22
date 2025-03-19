@@ -1,0 +1,315 @@
+  /* Style de la bande supérieure */
+body {
+    text-align:center;
+     display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #0000ff9a ;
+}
+
+.top-bar {
+    background-color: #ff5733; /* Couleur orange */
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100; /* Pour rester au-dessus */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: top 0.1s ease; /* Transition pour l'animation */
+}
+
+/* Ligne du haut */
+.top-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Ligne du bas */
+.bottom-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -3px; /* Ajuste l'espace entre les lignes */
+}
+        /* Style de la barre de navigation */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f8f8f8;
+            position: relative;
+            top: 65px;
+            left: 0;
+            right: 0;
+            height: 60px;
+            padding: 0 5px;
+            border-radius: 30px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-icon, .cart-icon {
+            font-size: 30px;
+            cursor: pointer;
+            
+        }
+        
+        
+
+
+        .logo {
+            height: 110px;
+            width: 220px;/* Ajuste la hauteur de ton logo */
+        }
+        
+        /* Style du menu latéral */
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Caché au départ */
+            width: 250px;
+            height: 100vh;
+            background-color: #070619;
+            color: white;
+            margin-top:0;
+            z-index: 1002;
+            padding-top: 50px;
+            transition: left 0.3s
+            ease-in-out; /* Animation fluide */
+        }
+
+        .menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        .menu a:hover {
+            background-color: #575757;
+        }
+
+        
+        /* Bouton pour fermer */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+       /* Style du lien Connexion en bas du menu */
+.connexion-link {
+    position: absolute;
+    bottom: 50px; /* Positionne le lien au pied du menu */
+    width: 220px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #444; /* Couleur de fond */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.connexion-link:hover {
+    background-color: #575757; /* Couleur au survol */
+}
+       
+ /* Panier */
+.cart-dropdown {
+  display: none;
+  background: #ff55b3dc;
+  border: 1px solid #ddd;
+  position: relative ;
+  top: 60px;
+  left: 0;
+  right: 0;
+  text-align:center;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+#detail-produit {
+    position: relative ;
+    top: 50px;
+}
+
+
+#produit-details {
+    position :relative;
+    left: 0;
+    right: 0;
+    top:50px;
+    font-size:18px;
+    background: #ffdc2b48;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box; /* Assure que padding et bordures sont inclus dans la largeur totale */
+}
+
+#ImagePrincipale img {
+    text-align:center;
+    object-fit: cover;
+    border-radius: 8px;
+    position : relative ;
+    left:0 ;
+    right:0 ;
+    top:0 ;
+    width: 100%;
+}
+
+h2 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 15px;
+    text-align: center;
+    margin:10px 5px;
+}
+
+footer {
+   position: relative;
+   left: 0;
+   bottom: 0;
+   right:0;
+   top: 75px;
+   font-size:18px;
+   text-align:center;
+    background-color:black;
+    height: 180px;
+}
+footer p {
+    color: white;
+    text-align:center;
+}
+
+h3 {
+    color: #555;
+    margin: 10px 5px;
+}
+
+
+ 
+
+
+
+
+
+
+
+
+/* Styles pour la galerie */
+.gallery-container {
+position : relative ;
+     left:0 ;
+    right:0 ;
+    padding: 10px;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Pour que les images s'alignent correctement */
+    gap: 20px; /* Espace entre les images */
+}
+
+.gallery-container img {
+    position : relative ;
+     left:0 ;
+    right:0 ;
+    top:0 ;
+    height: auto;
+    width: 90%;
+    border-radius: 10px;
+    scroll-snap-align: start; /* S'assurer que chaque image prend toute la largeur du conteneur */
+    object-fit: cover; /* Permet à l'image de couvrir l'espace sans déformation */
+}
+
+
+
+video {
+    
+    position : relative ;
+     left:0 ;
+    right:0 ;
+   border-radius: 15px;
+    margin-top: 15px;
+    width: 100%;
+    height: auto;
+    text-align:center;
+}
+
+
+
+.prix {
+    display: flex;
+    justify-content: center; /* Aligner les prix horizontalement */
+    align-items: center;
+    gap: 20px; /* Espace entre les prix */
+    margin-top: 10px; /* Espacement entre l'image et les prix */
+}
+
+
+
+.prix-original {
+    text-decoration: line-through; /* Barrer le prix original */
+    color: #000000;
+    font-size: 18px;
+}
+
+.prix-actuel {
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+/* Style du bouton vibrant */
+       #ajouter-au-panier {
+            position: relative;
+            animation: vibration 1s infinite;
+            width: 100%;
+        }
+
+        /* Animation de vibration */
+        @keyframes vibration {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-6px); }
+    100% { transform: translateX(6px); }
+}
+        
+        
+#ajouter-au-panier:hover {
+    background: #fff100c8;
+}
+
+
+
+
+#ajouter-au-panier {
+    position: fixed;
+    bottom: 0;
+    left:0;
+    right: 0;
+    transform: translateX(-50%);
+    background-color: #00ff03c7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 40px;
+    transition: bottom 0.3s ease-in-out;
+    z-index: 1000;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - LidoSelect</title>
+    <link rel="stylesheet" href="inscription.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Inscription</h2>
+        <p>Créez un compte pour accéder à votre espace personnel.</p>
+
+        <form id="inscription-form">
+            <div class="input-group">
+                
+                <label for="email">Email :</label>
+                 <div class="email-container">
+                <input type="email" id="email" placeholder="Votre email" required>
+                </div>
+            </div>
+
+           
+       <div class="input-group">    
+    <label for="password">Mot de passe :</label>
+    <div class="password-container">
+        <input type="password" id="password" placeholder="Créer un mot de passe" required>
+        <span class="toggle-password" id="toggle-password" onclick="togglePasswordVisibility('password', 'toggle-password')">👁️</span>
+    </div>
+    <small id="password-strength"></small>
+</div>
+
+<div class="input-group">
+    <label for="confirm-password">Confirmer le mot de passe :</label>
+    <div class="password-container">
+        <input type="password" id="confirm-password" placeholder="Confirmez votre mot de passe" required>
+        <span class="toggle-password" id="toggle-confirm-password" onclick="togglePasswordVisibility('confirm-password', 'toggle-confirm-password')">👁️</span>
+    </div>
+</div>
+           
+
+            <button type="submit" class="btn">S'inscrire</button>
+            <p class="login-link">Déjà un compte ? <a href="connexion.html">Connectez-vous</a></p>
+        </form>
+
+        <div id="message"></div>
+    </div>
+
+    <!-- Script Firebase et notre fichier JS -->
+    <script type="module" src="inscription.js"></script>
+<script type="module" src="pixel.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord Admin - LidoSelect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="admin.css"> <!-- Importation du fichier CSS -->
+</head>
+<body>
+
+<header>
+    <h1>Tableau de bord Admin - LidoSelect</h1>
+    <nav>
+        <ul>
+            <li><a href="#produits">Produits</a></li>
+            <li><a href="#commandes">Commandes</a></li>
+            <li><a href="#utilisateurs">Utilisateurs</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <section id="produits">
+        <h2>Gérer les Produits</h2>
+        <button class="button" id="ajouter-produit-btn">Ajouter un Produit</button>
+        <!-- affichage de produits-->
+        <div id="produit-list" class="product-list"></div>
+    </section>
+<!-- formulaire ajouter produit-->
+  <section id="product-form" style="display: none;">
+    <h3>Ajouter un Produit</h3>
+    <form id="ajout-produit-form">
+        <input type="text" id="product-name" placeholder="Nom du produit" required>
+         <input type="number" id="product-priceOriginal" placeholder="PrixOriginal (en FCFA)" required>
+        <input type="number" id="product-price" placeholder="Prix (en FCFA)" required>
+        <textarea id="product-description" placeholder="Description" required ></textarea>
+        <textarea id="product-description1" placeholder="Description1" required ></textarea>
+        <input type="text" id="product-image" placeholder="URL de l'image principale" required>
+         
+        <input type="text" id="product-images" placeholder="URLs des images supplémentaires (séparées par des virgules)">
+  
+       <input type="text" id="product-videos" placeholder="URLs des vidéos (séparées par des virgules)">
+        
+      
+      <input type="submit" id="submit-produit-btn" value="Ajouter le Produit">
+        
+    </form>
+</section>
+
+<!-- commande -->
+    <section id="commandes">
+        <h2>Gérer les Commandes</h2>
+        <div id="commande-list" class="order-list"></div>
+    </section>
+
+<!-- utilisateurs -->
+    <section id="utilisateurs">
+        <h2>Gérer les Utilisateurs</h2>
+        <div id="utilisateur-list" class="user-list"></div>
+    </section>
+
+
+<!-- pixel Facebook -->
+<section>
+    <h2>Paramètres Facebook Pixel</h2>
+<form id="pixel-form">
+  <label for="pixel-id">ID Pixel Facebook :</label>
+  <input type="text" id="pixel-id" name="pixel-id" required>
+  <button type="submit">Enregistrer</button>
+</form>
+</section>
+
+
+
+</div>
+
+ <!--  
+    redirige les clients vers l'accueil  -->
+    <script type="module">
+    import { auth, db } from "./firebase.js";
+    import { doc, getDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+
+    onAuthStateChanged(auth, async (user) => {
+        if (user) {
+            const userDoc = await getDoc(doc(db, "utilisateurs", user.uid));
+            if (userDoc.exists() && userDoc.data().role !== "admin") {
+                alert("Accès refusé !");
+                window.location.href = "index.html";
+            }
+        } else {
+            alert("Veuillez vous connecter !");
+            window.location.href = "connexion.html";
+        }
+    });
+
+</script>
+<script type="module" src="admin.js"></script> <!-- Importation du fichier JS -->
+<script type="module" src="pixel.js"></script>
+<script type="module" src="pixel.js"></script>
+</body>
+</html>

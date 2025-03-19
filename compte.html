@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace personnel</title>
+     <link rel="stylesheet" href="dark-mode.css"> 
+     <link rel="stylesheet" href="compte.css">  
+    
+   
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+</head>
+<body>
+    
+    
+       
+    
+   <!-- Bande de notification Paiement et Livraison -->
+<div class="top-bar">
+    <div class="top-text">Paiement à la Livraison et Livraison</div>
+    <div class="bottom-text">Gratuite</div>
+     <a style="bottom:15px;" id="toggle-dark-mode">💡</a>
+</div>
+    <!-- Barre de navigation -->
+    <div class="navbar">       <span class="menu-icon" onclick="ouvrirMenu()" >☰</span>
+      <a href="index.html"><img src="https://i.imgur.com/yZk5fp6.png" alt="Logo" class="logo"></a>
+       <div class="profile-navBar">
+           <img id="profile-img" src="default-profile.png" alt="Photo de profil" id="toggle-container">
+       </div>
+       
+      
+    </div>
+    
+     <!-- Menu Latéral -->
+    <div class="menu" id="menu">
+        <span class="close-btn" onclick="fermerMenu()">&times;</span>
+      
+       <hr> <a href="index.html">🏬 Boutique</a>
+       <a href="compte.html" class="connexion-link">👤 Profil</a><hr>
+        <a href="contact.html">📞Contactez-nous</a><hr>
+         <a id="toggle-container">⚙️ Paramètres</a><hr>
+           <a href="index.html" onclick="logout()">🚪 Se déconnecter</a><hr>
+       
+    </div>
+   <!-- vos commandes existant--> 
+   <a style="font-size:18px; position : relative ; top:80px;"  href="commande.html">Voir mes commandes existantes</a>
+   
+   <p. style="font-size:18px; position : relative ; top:100px;" >
+    Bienvenue dans votre espace <br>personnel. Ici, vous pouvez gérer vos commandes, suivre leur statut et mettre à jour vos informations personnelles. <br><br>
+   Vous pouvez rechercher vos commandes en utilisant le numéro de téléphone que vous avez renseigné lors de votre commande en cliquant sur   <a href="commande.html">Voir mes commandes existantes</a>
+</p>
+
+   
+     <!-- Contenu principal -->
+    <div id="parametres">
+    <div class="container">
+        <h2>Mon Profil</h2>
+        
+        <!-- Photo de profil -->
+        <div class="profile-picture">
+            <img id="profile-img" src="default-profile.png" alt="Photo de profil">
+            <input type="file" id="profile-input" accept="image/*">
+            <button id="upload-btn">Mettre à jour</button>
+        </div>
+
+        <p>Email : <span id="user-email">Chargement...</span></p>
+
+        <form id="profil-form">
+            <div class="input-group">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" placeholder="Votre nom">
+            </div>
+
+            <div class="input-group">
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" placeholder="Votre numéro">
+            </div>
+
+            <div class="input-group">
+                <label for="adresse">Adresse :</label>
+                <input type="text" id="adresse" placeholder="Votre adresse">
+            </div>
+
+            <button type="submit" class="btn">Enregistrer</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+    </div>
+    
+<script defer>
+    
+    
+    
+    //cacher et ouvrir les informations à mettre à jour 
+
+document.getElementById("toggle-container").addEventListener("click", function () {
+    const containerDiv = document.getElementById("parametres");
+
+    // Vérifier s'il est affiché ou caché
+    if (containerDiv.style.display === "none" || containerDiv.style.display === "") {
+        containerDiv.style.display = "block";  // Afficher le div
+    } else {
+        containerDiv.style.display = "none";  // Cacher le div
+    }
+});
+    
+ 
+
+</script>
+    
+    <!--le pied de la page d'accueil -->
+ <footer style="background-color:lightgray;">
+     <!-- besoin d'aide ?-->
+     
+     <div  id="support-button">
+    <button onclick="ouvrirSupport()">💬 Besoin d’aide ?</button>
+    <div id="support-options">
+        <a href="https://wa.me/2290197797740" target="_blank">📱 WhatsApp</a>
+        <a href="tel:+2290197797740">
+  <i class="fas fa-phone"></i> Téléphone 
+</a>
+           </div>
+</div><hr>
+     
+ <div>
+     <!-- à propos-->
+     <a href="a-propos.html">ℹ️ À Propos</a><hr>
+     <a href="a-propos.html#engagements">🛡️ Nos Engagements</a><hr>
+<!-- certification et témoignages-->
+<a href="a-propos.html#certifications">🎖️ Certifications</a><hr>
+<a href="a-propos.html#temoignages">🗣️ Témoignages</a><hr>
+<a href="faq.html">❓ FAQ</a><hr>
+     
+ </div>  
+     
+    <p>© 2025, Ma boutique santé, beauté et bien-être : <span class="lido">Lido</span><span class="select">Select</span></p>
+    
+    <!-- Liens vers les réseaux sociaux avec des icônes -->
+    <div class="social-links">
+         
+        <a href="https://wa.me/22997797740" class="social-icon" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/share/154JbvRdSy/" class="social-icon" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://instagram.com/lidoselect" class="social-icon" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://tiktok.com/@lidoselect" class="social-icon" target="_blank">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+    </div>
+</footer>
+    
+    <script>
+        function ouvrirMenu() {
+            document.getElementById("menu").style.left = "0"; // Fait apparaître le menu
+        }
+
+        function fermerMenu() {
+            document.getElementById("menu").style.left = "-250px"; // Cache le menu
+        }  
+        
+
+//défilement de top-bar
+
+let lastScrollTop = 0; // Dernière position du défilement
+let isScrollingDown = false; // Vérifie si on défile vers le bas
+const topBar = document.querySelector('.top-bar'); // Sélectionner la barre de navigation
+
+let scrollTimeout; // Variable pour stocker le timeout
+
+// Fonction pour gérer le défilement
+function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Si on défile vers le bas (scrollTop > lastScrollTop)
+    if (scrollTop > lastScrollTop) {
+        // Lorsque on défile vers le bas, on déplace la top-bar vers le haut
+        topBar.style.top = `-${scrollTop}px`;  // La top-bar se cache en défilant vers le bas
+    } else {
+        // Lorsque on défile vers le haut, la top-bar reste à sa place
+        topBar.style.top = '0px';  // Revenir à sa position initiale
+    }
+
+    // Si un défilement est détecté, on efface le timeout précédent
+    clearTimeout(scrollTimeout);
+
+    // Définir un nouveau timeout pour revenir à la position après une pause de défilement
+    scrollTimeout = setTimeout(() => {
+        // Revenir à la position d'origine après une pause de défilement
+        topBar.style.top = '0px';  // Revenir à la position initiale après l'arrêt du défilement
+    }, 200); // 200ms après l'arrêt du défilement
+}
+
+// Ajouter un événement de défilement sur la fenêtre
+window.addEventListener('scroll', handleScroll);
+ </script>
+ 
+ <script>
+    //besoin d'aide ?
+    
+    function ouvrirSupport() {
+        let options = document.getElementById("support-options");
+        options.style.display = (options.style.display === "block") ? "none" : "block";
+    }
+</script>
+<script src="dark-mode.js"></script>
+<script type="module" src="compte.js"></script>
+<script type="module" src="pixel.js"></script>
+</body>
+</html>

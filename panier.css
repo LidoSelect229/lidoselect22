@@ -1,0 +1,163 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: cyan;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Styles pour les produits du panier */
+.produit-panier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.produit-panier img {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+.produit-panier h3 {
+    margin: 10px 0;
+    color: #555;
+}
+
+.produit-panier p {
+    margin: 5px 0;
+    color: #777;
+}
+
+/* Conteneur pour la quantité et le bouton supprimer */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+.quantite-input {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.produit-panier button {
+    padding: 5px 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+}
+
+.produit-panier button:hover {
+    background-color: #ff1a1a;
+}
+
+/* Styles pour le formulaire de commande */
+.commande-formulaire {
+    margin-top: 30px;
+}
+
+.commande-formulaire form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.commande-formulaire label {
+    margin-top: 10px;
+    color: #555;
+}
+
+.commande-formulaire input {
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+#finaliser-commande {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    animation: vibration 0.5s infinite;
+    border-radius: 10px;
+}
+
+#finaliser-commande:hover {
+    background-color: #45a049;
+}
+
+/* Animation de vibration pour le bouton "Finaliser la Commande" */
+@keyframes vibration {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
+
+/* Styles pour le total */
+.total {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.total h2 {
+    color: #333;
+}
+
+
+.prix {
+    display: flex;
+    justify-content: center; /* Aligner les prix horizontalement */
+    align-items: center;
+    gap: 10px; /* Espace entre les prix */
+    margin-top: 10px; /* Espacement entre l'image et les prix */
+}
+
+
+
+.prix-original {
+    text-decoration: line-through; /* Barrer le prix original */
+    color: red;
+    font-size: 18px;
+}
+
+.prix-actuel {
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+input {
+    outline: 3px solid red; /* Contour bleu */
+    outline-offset: 1px; /* Espacement entre l'input et le contour */
+}
